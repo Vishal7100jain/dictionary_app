@@ -14,3 +14,9 @@
     width: 60vw;
     padding: 10px;
 }
+
+#wordHeading{
+    text-decoration: underline rgb(224, 209, 245);
+    text-decoration-thickness: 5px;
+    text-decoration-skip-ink: none;
+}
