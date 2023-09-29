@@ -5,4 +5,12 @@
 
 .card{
     text-align: center;
+    display: grid;
+    justify-content: center;
+}
+
+.card-text{
+    height: 80vh;
+    width: 60vw;
+    padding: 10px;
 }

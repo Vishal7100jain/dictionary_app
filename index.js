@@ -13,10 +13,18 @@ async function main(word) {
         const response = await fetch(url, options);
         const result = await response.json();
 
-    
+        let answer = ""
         wordHeading.innerHTML = `You Searched For : ` + result.word.toUpperCase()
-        definationBrife.innerHTML = result.definition
-        console.log(result)
+
+        if(result.definition != ""){
+            answer = result.definition
+            // to get the answer till one line or at the fullstop.
+            let oneLineAnswer = answer.replace("1.", "1").indexOf(".")
+            definationBrife.innerHTML = answer.slice(0, oneLineAnswer + 1) + "."
+        }else{
+            definationBrife.innerHTML = "SORRY, Word do not exist in your dictionary"
+        }
+
     } catch (error) {
         console.error(error);
     }
