@@ -14,13 +14,13 @@ async function main(word) {
         const result = await response.json();
 
         let answer = ""
-        wordHeading.innerHTML = `You Searched For : ` + result.word.toUpperCase()
+        wordHeading.innerHTML = `You Searched For : ` + result.word.toUpperCase() 
 
         if(result.definition != ""){
             answer = result.definition
             // to get the answer till one line or at the fullstop.
             let oneLineAnswer = answer.replace("1.", "1").indexOf(".")
-            definationBrife.innerHTML = answer.slice(0, oneLineAnswer + 1) + "."
+            definationBrife.innerHTML = answer.slice(0, oneLineAnswer + 1) + "." + "<hr>"
         }else{
             definationBrife.innerHTML = "SORRY, Word do not exist in your dictionary"
         }
